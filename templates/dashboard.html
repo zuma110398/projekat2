@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+    <h2>Dobro dosli na profil</h2>
+
+    <div class="card">
+        <div class="card-header">
+            Info:
+        </div>
+        <div class="card-body">
+            <p><strong>Ime:</strong> {{ user.ime }} {{ user.prezime }}</p>
+            <p><strong>Email:</strong> {{ user.email }}</p>
+            <p><strong>Broj telefona:</strong> {{ user.broj_telefona }}</p>
+        </div>
+    </div>
+
+    <a href="/logout" class="btn btn-danger mt-3">Logout</a>
+
+{% endblock %}
+

@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    <h2>Registracija</h2>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="container mt-3">
+                {% for message in messages %}
+                    <div class="alert alert-{{ message_category }}" role="alert">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <form method="post" action="/register">
+        <div class="form-group">
+            <label for="ime"> Ime</label>
+            <input type="text" class="form-control" id="ime" name="ime" required>
+        </div>
+        <div class="form-group">
+            <label for="prezime">Prezime</label>
+            <input type="text" class="form-control" id="prezime" name="prezime" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="broj_telefona">Broj telefona</label>
+            <input type="text" class="form-control" id="broj_telefona" name="broj_telefona" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Registracija</button>
+    </form>
+{% endblock %}
+

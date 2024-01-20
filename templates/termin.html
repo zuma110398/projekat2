@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block title %}Detalji termina{% endblock %}
+
+{% block content %}
+  <h2>Termin info</h2>
+  <p>Termin ID: {{ termin.id }}</p>
+  <p>Doktor: {{ termin.doktor_id }}</p>
+  <p>Pacijentt: {{ termin.pacijent_id }}</p>
+  <p>Datum: {{ termin.termin_date }}</p>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}Termini{% endblock %}
+
+{% block content %}
+  <h2>Vas termin</h2>
+  <ul>
+    {% for termin in termini %}
+      <li>
+        <a href="{{ url_for('appointment', id=termin.id) }}">
+          Appointment ID: {{ termin.id }} - Date: {{ termin.termin_date }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}

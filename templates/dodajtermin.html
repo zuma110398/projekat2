@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block title %}Termini{% endblock %}
+
+{% block content %}
+  <h2>Dodajte termin</h2>
+  <form method="post" action="{{ url_for('dodajtermin') }}">
+    <label for="doctor_id">Odaberi doktora:</label>
+    <select name="doctor_id" id="doctor_id">
+      {% for doctor in doctors %}
+        <option value="{{ doctor.id }}">{{ doctor.name }}</option>
+      {% endfor %}
+    </select>
+    <br>
+
+    <label for="termin_date">Odaberite datum:</label>
+    <input type="datetime-local" name="termin_date" required>
+    <br>
+
+    <button type="submit">Kreiraj</button>
+  </form>
+{% endblock %}
